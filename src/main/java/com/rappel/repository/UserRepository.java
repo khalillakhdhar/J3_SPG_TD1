@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.rappel.model.User;
 
-public interface UserInterface extends CrudRepository<User, Long> {
+public interface UserRepository extends CrudRepository<User, Long> {
 
 }
