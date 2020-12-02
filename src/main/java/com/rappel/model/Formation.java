@@ -1,5 +1,6 @@
 package com.rappel.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +14,7 @@ public class Formation {
 long id;
 @NotBlank
 String titre;
-
+@Column(nullable = true,length = 100)
+String description;
 
 }
