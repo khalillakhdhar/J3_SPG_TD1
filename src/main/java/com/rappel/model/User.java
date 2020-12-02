@@ -21,6 +21,8 @@ public class User {
 	@NotNull
 	@Column(unique = true)
 	private String email;
+	@Column(unique = false,nullable = false)
+	private String mdp;
 	
 
 }
