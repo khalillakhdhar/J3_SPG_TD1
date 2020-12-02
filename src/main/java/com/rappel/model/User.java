@@ -14,7 +14,7 @@ import com.sun.istack.NotNull;
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	long id;
+	private long id;
 	
 	@Column(nullable = false, length = 30)
 	private String nom;
@@ -23,6 +23,34 @@ public class User {
 	private String email;
 	@Column(unique = false,nullable = false)
 	private String mdp;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getNom() {
+		return nom;
+	}
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getMdp() {
+		return mdp;
+	}
+	public void setMdp(String mdp) {
+		this.mdp = mdp;
+	}
+	
+	
+	
+	
 	
 
 }
