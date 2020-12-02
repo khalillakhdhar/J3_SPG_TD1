@@ -5,6 +5,8 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,5 +42,17 @@ public User getUtilisateurById(@PathVariable(value = "id") Long id) {
  return userRepository.findById(id)
          .orElseThrow(() -> new ResourceNotFoundException("Utilisateur", "id", id));
 }
+
+@DeleteMapping("/user/{id}")
+public ResponseEntity<?> deleteUtilisateur(@PathVariable(value = "id") Long id) {
+    User user = userRepository.findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("Utilisateur", "id", id));
+
+    userRepository.delete(user);
+
+    return ResponseEntity.ok().build();
+}
+
+
 
 }
