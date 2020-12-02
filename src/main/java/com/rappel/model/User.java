@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.sun.istack.NotNull;
+
 @Entity
 @Table(name = "utilisateur")
 public class User {
@@ -16,6 +18,9 @@ public class User {
 	
 	@Column(nullable = false, length = 30)
 	private String nom;
+	@NotNull
+	@Column(unique = true)
+	private String email;
 	
 
 }
